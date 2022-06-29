@@ -11,8 +11,10 @@ header{
     height: 30px;
 }
 
-.filtro {
+.sidebar .filtro {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .textoFiltro {
@@ -30,7 +32,7 @@ header{
     transition: 0.5s;
     transition-property: left;
 }
-.sidebar a{
+.sidebar a, .filtro{
     color: #fff;
     display: block;
     width: 100%;
@@ -41,7 +43,7 @@ header{
     transition: 0.5s;
     transition-property:background;
 }
-.sidebar a:hover{
+.sidebar a:hover, .iconMaior:hover{
     background: #00940c;
 }
 .sidebar ion-icon{
