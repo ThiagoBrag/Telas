@@ -11,29 +11,73 @@ header{
     height: 30px;
 }
 
+.sidebar .reservas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0047B6;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.sidebar .reservas:hover {
+    background: #003c9c;
+}
+
 .sidebar .filtro {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #0047B6;
+    cursor:default;
+    color: #FFFFFF;
 }
 
-.textoFiltro {
-    float: left;
-    margin-right: 10px;
+#iconMaior {
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-right: 15px;
+    width: 15px;
+    transition: all 0.7s;
+    transform: scaleX(-1)
+}
+
+.ContainerIconMaior, .ContainerIconCalendario {
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+.ContainerIconCalendario {
+    font-size: x-large;
+}
+
+.ContainerIconMaior:hover {
+    background: #003c9c;
+}   
+
+.textoFiltro, .textoReservas {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-weight: 600;
 }
 
 .sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: fixed;
     width: 250px;
     height: 100%;
-    margin-top: 70px;
     left: 0;
-    background: #9c0000;
+    background: #EEEEEE;
     transition: 0.5s;
     transition-property: left;
 }
-.sidebar a, .filtro{
-    color: #fff;
+
+.sidebar a, .filtro, .reservas{
+    color: rgb(0, 0, 0);
+    font-family: "Inter", sans-serif;
     display: block;
     width: 100%;
     line-height: 60px;
@@ -43,45 +87,36 @@ header{
     transition: 0.5s;
     transition-property:background;
 }
-.sidebar a:hover, .iconMaior:hover{
-    background: #00940c;
+
+.sidebar a:hover{
+    background: #a5a5a5;
 }
-.sidebar ion-icon{
+
+.sidebar ion-icon, #iconMaior,.ContainerIconMaior, .ContainerIconCalendario{
     padding-right: 10px;
 }
 
-label #sidebar_btn{
-    z-index: 1;
-    position: fixed;
-    left: 300px;
-    color: rgb(0, 0, 0);
-    font-size: 25px;
-    margin: 5px 0;
-    cursor: pointer;
-    transition: 0.5s;
-    transition-property:color ;
-}
-label #sidebar_btn:hover{
-    color: #3e00a1;
-}
 #check:checked ~ .sidebar{
     left: -190px;
 }
+
 #check:checked ~ .sidebar a span{
     display: none;
 }
+
 #check:checked ~ .sidebar a{
     font-size: 20px;
     margin-left: 170px;
     width: 80px;
 }
-.content{
-    height: 100vh;
-    transition: 0.5s;
-}
-#check:checked ~ .content{
-    margin-left: 60px;
-}
-#check{
+
+#check {
     display: none;
+}
+
+#check:checked ~ .sidebar #iconMaior {
+    margin-right: 0;
+    width: 15px;
+    transition: all 0.7s;
+    transform: scaleX(1);
 }
